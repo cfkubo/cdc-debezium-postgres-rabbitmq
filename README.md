@@ -8,7 +8,9 @@ This is a poc repo that demonstrating and implementing the Change Data Capture (
 
 ## How to run on K8s
 
-1. Create docker containers for Debezium server
+1. Create docker containers for Debezium server and demo view and loader apps
+
+Note: The demo apps just act as viewer to see the CDC transactions.
 
 2. Create table transacations
 
