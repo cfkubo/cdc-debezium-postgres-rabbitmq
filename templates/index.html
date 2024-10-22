@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transaction Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    <h1>Transaction Details</h1>
+    <table class="table table-striped">
+    <!-- <table> -->
+        <tr>
+            <th>Transaction ID</th>
+            <th>Account Number</th>
+            <th>Transaction Date</th>
+            <th>Transaction Type</th>
+            <th>Amount</th>
+            <th>Balance</th>
+            <th>Description</th>
+        </tr>
+        {% for transaction in transactions %}
+        <tr>
+            <td>{{ transaction.transaction_id }}</td>
+            <td>{{ transaction.account_number }}</td>
+            <td>{{ transaction.transaction_date }}</td>
+            <td>{{ transaction.transaction_type }}</td>
+            <td>{{ transaction.amount }}</td>
+            <td>{{ transaction.balance }}</td>
+            <td>{{ transaction.description }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
