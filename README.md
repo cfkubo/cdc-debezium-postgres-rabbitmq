@@ -1,6 +1,5 @@
 # cdc-debezium-postgres-rabbitmq
 
-# CDC with Postgres and RabbitMQ
 <p align="center">
 <img src="static/cdc.webp" width="800" alt="cdc" />
 </p>
@@ -33,7 +32,7 @@ CREATE TABLE public.account_transactions (
   - new RabbitMQ Queue called `inventory_transactions` and bind it with the exchange using routing key `inventory_trasactions`
 
 
-make sure that debezium-server is up and running. 
+make sure that debezium-server is up and running.
 
 
 4. inserting new row to customers table. you can use [tableplus](https://tableplus.com/) or run this query
