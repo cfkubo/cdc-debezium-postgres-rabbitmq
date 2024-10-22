@@ -4,15 +4,14 @@
 <img src="static/cdc.webp" width="800" alt="cdc" />
 </p>
 
-This is a poc repo that demonstrating and implementing the Change Data Capture (CDC) concept using Debezium and PostgreSQL. This project focuses on the monitoring and capturing of row-level changes in PostgreSQL tables. Leveraging Debezium, we enable the distribution of these changes, allowing applications to detect and react to data modifications in real-time.
+> This is a poc repo that demonstrating and implementing the Change Data Capture (CDC) concept using Debezium and PostgreSQL. This project focuses on the monitoring and capturing of row-level changes in PostgreSQL tables. Leveraging Debezium, we enable the distribution of these changes, allowing applications to detect and react to data modifications in real-time.
 
 ## How to run on K8s
 
-1. Create docker containers for Debezium server and demo view and loader apps
-
+> Create docker containers for Debezium server and demo view and loader apps and you can leverage the deployment yaml in k8s folders
 Note: The demo apps just act as viewer to see the CDC transactions.
 
-2. Create table transacations
+> Create table transacations
 
 ```sql
 CREATE TABLE public.account_transactions (
@@ -29,7 +28,7 @@ CREATE TABLE public.account_transactions (
 ```
 
 
-3. From rabbitMQ GUI create
+> From rabbitMQ GUI create
   - new RabbitMQ Topic Exchange called `tutorial.public.account_transaction`
   - new RabbitMQ Queue called `inventory_transactions` and bind it with the exchange using routing key `inventory_trasactions`
 
@@ -45,10 +44,10 @@ CREATE TABLE public.account_transactions (
   <img src="static/binding.png" width="800" alt="cdc-postgres" />
   </p>
 
-make sure that debezium-server is up and running.
+> make sure that debezium-server is up and running.
 
 
-4. inserting new row to customers table. you can use [tableplus](https://tableplus.com/) or run this query
+> Inserting new data to transactions table. you can use [tableplus](https://tableplus.com/) or run this query
 
 ```sql
 INSERT INTO public.account_transactions (account_number, transaction_date, transaction_type, amount, balance, description)
@@ -62,7 +61,7 @@ SELECT
 FROM generate_series(1, 10) AS i;
 ```
 
-you should see data in your RabbitMQ queue
+> You should see data in your RabbitMQ queue
 
 
 ## References
