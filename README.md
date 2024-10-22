@@ -29,10 +29,21 @@ CREATE TABLE public.account_transactions (
 ```
 
 
-3. From [rabbitMQ GUI](http://localhost:15672) create
+3. From rabbitMQ GUI create
   - new RabbitMQ Topic Exchange called `tutorial.public.account_transaction`
   - new RabbitMQ Queue called `inventory_transactions` and bind it with the exchange using routing key `inventory_trasactions`
 
+  <p align="center">
+  <img src="static/queue.png" width="800" alt="cdc-postgres" />
+  </p>
+
+  <p align="center">
+  <img src="static/exchange.png" width="800" alt="cdc-postgres" />
+  </p>
+
+  <p align="center">
+  <img src="static/binding.png" width="800" alt="cdc-postgres" />
+  </p>
 
 make sure that debezium-server is up and running.
 
