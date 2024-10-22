@@ -7,9 +7,12 @@
 > This is a poc repo that demonstrating and implementing the Change Data Capture (CDC) concept using Debezium and PostgreSQL. This project focuses on the monitoring and capturing of row-level changes in PostgreSQL tables. Leveraging Debezium, we enable the distribution of these changes, allowing applications to detect and react to data modifications in real-time.
 
 ## Requirments:
-> Kubernetes Cluster 
+> Kubernetes Cluster
+
 > RabbitMQ OSS or VMware RabbitMQ
+
 > Postgress OSS or VMware Postgres
+
 > Docker (for local)
 
 
