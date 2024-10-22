@@ -1,0 +1,46 @@
+# version: "3.9"
+services:
+  # gpdb:
+  #   image: aggrik/greenplum_stable
+  #   privileged: true
+  #   # entrypoint: /usr/lib/systemd/systemd
+  #   ports:
+  #     - 5433:5432
+  #   volumes:
+  #     - ${PWD}/greenplum-db-6.24.0-rhel8-x86_64.rpm:/home/gpadmin/greenplum-db-6.24.0-rhel8-x86_64.rpm
+  #     - ${PWD}/gpss-gpdb6-1.10.1-rhel8-x86_64.gppkg:/home/gpadmin/gpss-gpdb6-1.10.1-rhel8-x86_64.gppkg
+  #     - ${PWD}/script_gpdb.sh:/home/gpadmin/script_gpdb.sh
+  # rabbitmq:
+  #   image: rabbitmq:3-management
+  #   restart: always
+  #   ports:
+  #     - 5672:5672
+  #     - 15672:15672
+  #   environment:
+  #     RABBITMQ_DEFAULT_USER: guest
+  #     RABBITMQ_DEFAULT_PASS: guest
+  #     RABBITMQ_DEFAULT_VHOST: vhost
+  #   volumes:
+  #     - rabbitmqdata:/var/lib/rabbitmq/mnesia
+  # postgres:
+  #   image: debezium/postgres:14-alpine
+  #   container_name: postgres
+  #   ports:
+  #     - 5432:5432
+  #   environment:
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=postgres
+  debezium-server:
+    image: quay.io/debezium/server:2.4
+    container_name: debezium-server
+    ports:
+      - 8080:8080
+    volumes:
+      - ./conf:/debezium/conf
+    # depends_on:
+    #   - rabbitmq
+    #   - postgres
+      # - gpdb
+
+# volumes:
+#   rabbitmqdata:
