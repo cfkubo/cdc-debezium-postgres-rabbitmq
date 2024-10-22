@@ -15,6 +15,10 @@
 
 > Docker (for local)
 
+<p align="center">
+<img src="static/demo.png" width="800" alt="cdc-postgres" />
+</p>
+
 
 ## How to run on K8s
 
